@@ -1,3 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  .wrap{
+    @apply p-4 sm:p-8
+  }
+  .back{
+    @apply text-5xl font-bold cursor-pointer mb-4
+  }
+
+  /* card */
+  div.card{
+      @apply bg-gray-100 p-6 my-4
+  }
+  div.innerCard{
+      @apply bg-gray-200 p-6 my-6
+  }
+  div > pre{
+      @apply whitespace-pre-wrap leading-6
+  }
+
+  /* button */
+  button.button{
+      @apply inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2
+  }
+}
+
 html,
 body {
   padding: 0;
