@@ -7,7 +7,7 @@
     @apply p-4 sm:p-8
   }
   .back{
-    @apply text-5xl font-bold cursor-pointer mb-4
+    @apply text-6xl font-bold cursor-pointer leading-3
   }
 
   /* card */
