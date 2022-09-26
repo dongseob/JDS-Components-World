@@ -3,8 +3,8 @@ import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
 //pages
-import Modal from "./Modal";
-import Auth from "./Auth";
+import Modal from "./Modal/Modal";
+import Auth from "./Auth/Auth";
 
 export default function Home() {
     //페이지 목록

@@ -1,4 +1,4 @@
-import "./api/firebase";
+import "../api/firebase";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -28,7 +28,7 @@ const Auth = () => {
                 console.log("미로그인 상태");
             }
         });
-    }, []);
+    });
 
     const logOut = () => {
         if (window.confirm("로그아웃 처리 하시겠습니까?")) {

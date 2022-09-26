@@ -1,4 +1,5 @@
 import Image from "next/image";
+import "../api/firebase";
 import { getAuth, FacebookAuthProvider, signInWithPopup } from "firebase/auth";
 
 const AuthSignInFacebook = ({ setUserName, setIsLogin }) => {

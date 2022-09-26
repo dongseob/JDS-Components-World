@@ -1,4 +1,5 @@
 import Image from "next/image";
+import "../api/firebase";
 import { getAuth, GithubAuthProvider, signInWithPopup } from "firebase/auth";
 
 const AuthSignInGithub = ({ setUserName, setIsLogin }) => {
