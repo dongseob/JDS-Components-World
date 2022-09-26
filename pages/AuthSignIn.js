@@ -10,7 +10,6 @@ const AuthSignIn = ({ setUserName, setIsLogin }) => {
     const emailRef = useRef();
     const pwRef = useRef();
 
-    
     //이메일 방식 로그인
     const signIn = () => {
         signInWithEmailAndPassword(
