@@ -7,8 +7,9 @@ import AuthSignIn from "./AuthSignIn";
 import AuthSignUp from "./AuthSignUp";
 
 const Auth = () => {
-    const [userName, setUserName] = useState(); //로그인한 유저 이메일
+    const [userName, setUserName] = useState(""); //로그인한 유저 이메일
     const [isLogin, setIsLogin] = useState(); //로그인 유무
+    const [test, setTest] = useState("")
 
     const auth = getAuth();
     const user = auth.currentUser;
@@ -19,7 +20,13 @@ const Auth = () => {
             if (user) {
                 //로그인일시
                 const uid = user.uid;
-                setUserName(user.email);
+                
+                //서로 데이터 포맷이 다름 / user.email = 구글, user.displayName = 페이스북, 깃허브
+                if(user.email){
+                    setUserName(user.email);
+                }else if(user.displayName){
+                    setUserName(user.displayName);
+                }
                 setIsLogin(true);
                 console.log("로그인 상태");
             } else {
@@ -34,6 +41,7 @@ const Auth = () => {
         if (window.confirm("로그아웃 처리 하시겠습니까?")) {
             signOut(auth)
                 .then(() => {
+                    setUserName("");
                     setIsLogin(false);
                     location.reload();
                 })
@@ -69,6 +77,7 @@ const Auth = () => {
                         <AuthSignIn
                             setUserName={setUserName}
                             setIsLogin={setIsLogin}
+                            setTest={setTest}
                         ></AuthSignIn>
                     </div>
 
