@@ -1,10 +1,9 @@
 //default
 import Head from "next/head";
 import Link from "next/link";
-import { useState } from "react";
 //pages
-import Modal from "./Modal/Modal";
-import Auth from "./Auth/Auth";
+import Modal from "./Modal";
+import Auth from "./Auth";
 
 export default function Home() {
     //페이지 목록
@@ -29,9 +28,8 @@ export default function Home() {
                         .sort((a, b) => a.title.localeCompare(b.title))
                         .map((i) => (
                             <Link
-                                href={"/" + i.title}
+                                href={"/"+[i.title]}
                                 key={i.title}
-                                onClick={(e) => setListState(false)}
                             >
                                 <li className="p-1 m-1 font-semibold list-disc ml-6 link text-lg cursor-pointer">
                                     {i.title}

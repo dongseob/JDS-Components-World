@@ -1,5 +1,5 @@
 import Image from "next/image";
-import "../api/firebase";
+import "./api/firebase";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
 const AuthSignInGoogle = ({ setUserName, setIsLogin }) => {
