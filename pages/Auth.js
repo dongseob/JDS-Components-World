@@ -11,6 +11,7 @@ const Auth = () => {
     const [isLogin, setIsLogin] = useState(); //로그인 유무
     const [test, setTest] = useState("")
 
+    
     const auth = getAuth();
     const user = auth.currentUser;
 
