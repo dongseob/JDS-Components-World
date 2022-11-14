@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import "./api/firebase";
+import "../api/firebase";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 import AuthSignInGoogle from "./AuthSignInGoogle";

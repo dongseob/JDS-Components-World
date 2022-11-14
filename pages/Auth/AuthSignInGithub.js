@@ -1,18 +1,18 @@
 import Image from "next/image";
-import "./api/firebase";
-import { getAuth, FacebookAuthProvider, signInWithPopup } from "firebase/auth";
+import "../api/firebase";
+import { getAuth, GithubAuthProvider, signInWithPopup } from "firebase/auth";
 
-const AuthSignInFacebook = ({ setUserName, setIsLogin }) => {
+const AuthSignInGithub = ({ setUserName, setIsLogin }) => {
     const auth = getAuth();
-    const provider = new FacebookAuthProvider();
+    const provider = new GithubAuthProvider();
 
-    const signInFacebook = () => {
+    const signInGithub = () => {
         signInWithPopup(auth, provider)
             .then((result) => {
-                const user = result.user;
                 const credential =
-                    FacebookAuthProvider.credentialFromResult(result);
-                const accessToken = credential.accessToken;
+                    GithubAuthProvider.credentialFromResult(result);
+                const token = credential.accessToken;
+                const user = result.user;
                 setUserName(user.displayName);
                 setIsLogin(true);
             })
@@ -21,21 +21,21 @@ const AuthSignInFacebook = ({ setUserName, setIsLogin }) => {
                 const errorMessage = error.message;
                 const email = error.customData.email;
                 const credential =
-                    FacebookAuthProvider.credentialFromError(error);
+                    GithubAuthProvider.credentialFromError(error);
                 alert("error : " + errorCode);
             });
     };
 
     return (
-        <div onClick={signInFacebook}>
+        <div onClick={signInGithub}>
             <a
                 href="#"
                 className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-500 shadow-sm hover:bg-gray-50"
             >
-                <span className="sr-only">Sign in with Facebook</span>
+                <span className="sr-only">Sign in with Github</span>
                 <Image
-                    src="/images/facebook_logo.svg"
-                    alt="facebook_logo"
+                    src="/images/github_logo.svg"
+                    alt="github_logo"
                     width={20}
                     height={20}
                 ></Image>
@@ -43,4 +43,4 @@ const AuthSignInFacebook = ({ setUserName, setIsLogin }) => {
         </div>
     );
 };
-export default AuthSignInFacebook;
+export default AuthSignInGithub;

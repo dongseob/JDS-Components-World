@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import "./api/firebase";
+import "../api/firebase";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 const AuthSignUp = ({ setUserName, setIsLogin }) => {

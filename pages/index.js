@@ -2,14 +2,16 @@
 import Head from "next/head";
 import Link from "next/link";
 //pages
-import Modal from "./Modal";
-import Auth from "./Auth";
+import Modal from "./Modal/Modal";
+import Auth from "./Auth/Auth";
+import InfiniteScroll from "./InfiniteScroll/InfiniteScroll";
 
 export default function Home() {
     //페이지 목록
     const componentList = [
         { title: "Modal", route: <Modal /> },
         { title: "Auth", route: <Auth /> },
+        { title: "InfiniteScroll", route: <InfiniteScroll /> },
     ];
 
     return (
@@ -28,7 +30,7 @@ export default function Home() {
                         .sort((a, b) => a.title.localeCompare(b.title))
                         .map((i) => (
                             <Link
-                                href={"/"+[i.title]}
+                                href={"/"+[i.title]+"/"+[i.title]}
                                 key={i.title}
                             >
                                 <li className="p-1 m-1 font-semibold list-disc ml-6 link text-lg cursor-pointer">

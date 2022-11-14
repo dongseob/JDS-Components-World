@@ -1,4 +1,4 @@
-import "./api/firebase";
+import "../api/firebase";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
 import Link from "next/link";
