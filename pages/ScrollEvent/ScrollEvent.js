@@ -64,11 +64,11 @@ const ScrollEvent = () => {
 
     const [meteorState, setMeteorState] = useState(100);
 
-    const [scrollState, setScrollState] = useState(0); //max: 21, 0~12: spaceMan, 12~24: meteor
+    const [scrollState, setScrollState] = useState(0); //max: 21, 0~12: spaceMan, 12~21: meteor, 21: textPopup
 
-    // useEffect(() => {
-    //     console.log("scrollState : " + scrollState);
-    // }, [scrollState]);
+    useEffect(() => {
+        console.log("scrollState : " + scrollState);
+    }, [scrollState]);
 
     // useEffect(() => {
     //     console.log("spaceManState : " + spaceManState);
@@ -77,7 +77,7 @@ const ScrollEvent = () => {
     // useEffect(() => {
     //     console.log("meteorState : " + meteorState);
     // }, [meteorState]);
-    
+
     // useEffect(() => {
     //     console.log("spaceManTop : " + spaceManTop);
     // }, [spaceManTop]);
@@ -93,8 +93,12 @@ const ScrollEvent = () => {
             </Link>
             <div className="text-2xl font-semibold mt-2">Scroll Event</div>
 
+            <div className="card">
+                💡&emsp;총: 21번의 스크롤 이벤트 - 0~12: 스페이스맨, 12~21: 운석, 21: 텍스트 팝업
+            </div>
+
             <div
-                className="mt-12 relative overflow-hidden"
+                className="mt-6 relative overflow-hidden"
                 onWheel={(e) => {
                     //위로 스크롤
                     if (e.deltaY === -200) {
@@ -117,8 +121,8 @@ const ScrollEvent = () => {
 
                             setScrollState(scrollState - 1);
                         }
-                        if(scrollState === 21){
-                            textRef.current.style.display="none";
+                        if (scrollState === 21) {
+                            textRef.current.style.display = "none";
                         }
                     }
                     //아래로 스크롤
@@ -143,8 +147,8 @@ const ScrollEvent = () => {
                             setScrollState(scrollState + 1);
                         }
 
-                        if(scrollState === 21){
-                            textRef.current.style.display="block";
+                        if (scrollState === 21) {
+                            textRef.current.style.display = "block";
                         }
                     }
                 }}
@@ -175,7 +179,7 @@ const ScrollEvent = () => {
 
                     {/* meteor */}
                     <div
-                        className="absolute z-10 transition-all w-full h-full"
+                        className="absolute z-10 transition-all duration-700 w-full h-full"
                         style={{ left: "100%", top: "0" }}
                         ref={meteorRef}
                     >
@@ -199,13 +203,23 @@ const ScrollEvent = () => {
                     </div>
 
                     {/* text */}
-                    <div className="absolute top-1/2 left-1/2 bg-black/80 -translate-x-1/2 w-2/3 rounded-lg transition-all hidden z-20" ref={textRef}>
-                        <div className="text-5xl font-bold text-slate-100 p-12 text-center">JDS Components World</div>
+                    <div
+                        className="absolute top-1/2 left-1/2 bg-black/80 -translate-x-1/2 w-2/3 rounded-lg transition-all hidden z-20"
+                        ref={textRef}
+                    >
+                        <div className="text-5xl font-bold text-slate-100 p-12 text-center">
+                            JDS Components World
+                        </div>
                     </div>
 
                     {/* scroll down 안내멘트 */}
                     <div className="absolute bottom-4 left-1/2 -translate-x-1/2 animate-bounce rounded-lg z-30">
-                        <Image src={"/scrollEvent/scrollIcon.svg"} width={50} height={50} alt={"scrollIcon"}></Image>
+                        <Image
+                            src={"/scrollEvent/scrollIcon.svg"}
+                            width={50}
+                            height={50}
+                            alt={"scrollIcon"}
+                        ></Image>
                     </div>
                 </div>
             </div>
