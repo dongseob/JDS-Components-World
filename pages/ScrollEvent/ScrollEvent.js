@@ -94,7 +94,8 @@ const ScrollEvent = () => {
             <div className="text-2xl font-semibold mt-2">Scroll Event</div>
 
             <div className="card">
-                💡&emsp;총: 21번의 스크롤 이벤트 - 0~12: 스페이스맨, 12~21: 운석, 21: 텍스트 팝업
+                💡&emsp;<span className="font-semibold text-red-500">※웹브라우저에서만 작동</span>
+                <br></br>총: 21번의 스크롤 이벤트 - 0~12: 스페이스맨, 12~21: 운석, 21: 텍스트 팝업
             </div>
 
             <div
