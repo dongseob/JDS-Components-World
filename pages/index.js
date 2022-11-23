@@ -5,6 +5,7 @@ import Link from "next/link";
 import Modal from "./Modal/Modal";
 import Auth from "./Auth/Auth";
 import InfiniteScroll from "./InfiniteScroll/InfiniteScroll";
+import ScrollEvent from "./ScrollEvent/ScrollEvent";
 
 export default function Home() {
     //페이지 목록
@@ -12,6 +13,7 @@ export default function Home() {
         { title: "Modal", route: <Modal /> },
         { title: "Auth", route: <Auth /> },
         { title: "InfiniteScroll", route: <InfiniteScroll /> },
+        { title: "ScrollEvent", route: <ScrollEvent /> },
     ];
 
     return (
@@ -30,7 +32,7 @@ export default function Home() {
                         .sort((a, b) => a.title.localeCompare(b.title))
                         .map((i) => (
                             <Link
-                                href={"/"+[i.title]+"/"+[i.title]}
+                                href={"/" + [i.title] + "/" + [i.title]}
                                 key={i.title}
                             >
                                 <li className="p-1 m-1 font-semibold list-disc ml-6 link text-lg cursor-pointer">
