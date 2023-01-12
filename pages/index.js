@@ -6,7 +6,7 @@ import Modal from "./Modal/Modal";
 import Auth from "./Auth/Auth";
 import InfiniteScroll from "./InfiniteScroll/InfiniteScroll";
 import ScrollEvent from "./ScrollEvent/ScrollEvent";
-import Search from "./search/search";
+import Search from "./Search/Search";
 
 export default function Home() {
     //페이지 목록

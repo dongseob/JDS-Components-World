@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useState, useEffect, useCallback } from "react";
+// import { useState, useEffect, useCallback } from "react";
 import SearchRecord from "./SearchRecord";
 import SearchAuto from "./SearchAuto";
 
