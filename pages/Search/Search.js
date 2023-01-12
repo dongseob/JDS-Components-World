@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useState, useEffect, useCallback } from "react";
-import SearchRecord from "./SearchRecord";
+import SearchRecord from "./searchRecord";
 import SearchAuto from "./searchAuto";
 
 const Search = () => {
