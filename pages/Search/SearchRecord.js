@@ -1,13 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const SearchRecord = () => {
     const [searchValue, setSearchValue] = useState("");
     const [searchRecord, setSearchRecord] = useState([]);
     const [isSearch, setIsSearch] = useState(false);
 
-    const fnInputChange = (e) => {
+    const fnInputChange = useCallback((e) => {
         setSearchValue(e.target.value);
-    }
+    }, []);
 
     const fnSubmit = (e) => {
         e.preventDefault();

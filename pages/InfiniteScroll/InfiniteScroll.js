@@ -22,9 +22,9 @@ const InfiniteScroll = () => {
         };
     }, []);
 
-    useEffect(() => {
-        getDog();
-    }, [page]);
+    // useEffect(() => {
+    //     getDog();
+    // }, [page]);
 
     const obsHandler = (entries) => {
         const target = entries[0];
