@@ -1,13 +1,9 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 
 const SearchRecord = () => {
     const [searchValue, setSearchValue] = useState("");
     const [searchRecord, setSearchRecord] = useState([]);
     const [isSearch, setIsSearch] = useState(false);
-
-    // const fnInputChange = useCallback((e) => {
-    //     setSearchValue(e.target.value);
-    // }, []);
 
     const fnInputChange = (e) => {
         setSearchValue(e.target.value);
