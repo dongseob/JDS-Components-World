@@ -5,9 +5,13 @@ const SearchRecord = () => {
     const [searchRecord, setSearchRecord] = useState([]);
     const [isSearch, setIsSearch] = useState(false);
 
-    const fnInputChange = useCallback((e) => {
+    // const fnInputChange = useCallback((e) => {
+    //     setSearchValue(e.target.value);
+    // }, []);
+
+    const fnInputChange = (e) => {
         setSearchValue(e.target.value);
-    }, []);
+    }
 
     const fnSubmit = (e) => {
         e.preventDefault();
