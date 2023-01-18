@@ -22,9 +22,9 @@ const InfiniteScroll = () => {
         };
     }, []);
 
-    // useEffect(() => {
-    //     getDog();
-    // }, [page]);
+    useEffect(() => {
+        getDog();
+    }, [page]);
 
     const obsHandler = (entries) => {
         const target = entries[0];
@@ -68,10 +68,9 @@ const InfiniteScroll = () => {
                 {list && (
                     <div className="mt-6">
                         {list.map((el) => (
-                            <>
+                            <div key={el.id}>
                                 <picture>
                                     <img
-                                        key={el.id}
                                         className="opacity-100 mx-auto mb-6 rounded-md"
                                         src={el.url}
                                         alt={el.url}
@@ -79,7 +78,7 @@ const InfiniteScroll = () => {
                                         height={"300px"}
                                     />
                                 </picture>
-                            </>
+                            </div>
                         ))}
                     </div>
                 )}

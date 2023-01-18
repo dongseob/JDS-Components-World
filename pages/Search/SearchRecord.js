@@ -24,8 +24,6 @@ const SearchRecord = () => {
     const addStorage = (e, val) => {
         let storageItem = JSON.parse(localStorage.getItem("최근검색어"));
 
-        console.log("yogiyo1 : ", storageItem);
-
         if (storageItem !== null) {
             // 로컬스토리지에 값이 존재한지 확인
             if (storageItem.includes(val)) {
