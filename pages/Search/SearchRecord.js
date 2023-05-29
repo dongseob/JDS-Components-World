@@ -87,7 +87,7 @@ const SearchRecord = () => {
                         onClick={() => setIsInput(false)}
                         onChange={(e) => setIsInputVal(e.target.value)}
                         ref={inputRef}
-                        className="h-[44px] bg-[#eeeeee] rounded-[12px] py-[8px] px-[16px] pr-[140px] placeholder:text-[16px] placeholder:text-[#888888] placeholder:text-font-semibold w-full"
+                        className="h-[44px] bg-[#eeeeee] rounded-[12px] py-[8px] px-[16px] pr-[140px] placeholder:text-[16px] placeholder:text-[#888888] placeholder:text-font-semibold w-full border-[#888]"
                     />
 
                     <button
