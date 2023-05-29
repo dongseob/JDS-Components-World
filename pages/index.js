@@ -7,6 +7,7 @@ import Auth from "./Auth/Auth";
 import InfiniteScroll from "./InfiniteScroll/InfiniteScroll";
 import ScrollEvent from "./ScrollEvent/ScrollEvent";
 import Search from "./Search/Search";
+import PullToRefresh from "./PullToRefresh/PullToRefresh";
 
 export default function Home() {
     //페이지 목록
@@ -16,6 +17,7 @@ export default function Home() {
         { title: "InfiniteScroll", route: <InfiniteScroll /> },
         { title: "ScrollEvent", route: <ScrollEvent /> },
         { title: "Search", route: <Search /> },
+        { title: "PullToRefresh", route: <PullToRefresh /> },
     ];
 
     return (
